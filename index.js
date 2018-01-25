@@ -28,15 +28,17 @@ function checkCollision(rock) {
   if (top > 360) {
     const dodgerLeftEdge = positionToInteger(DODGER.style.left)
 
-    // FIXME: The DODGER is 40 pixels wide -- how do we get the right edge?
-    const dodgerRightEdge = 0;
+    // FIXED: The DODGER is 40 pixels wide -- how do we get the right edge?
+    //const dodgerRightEdge = 0;
+    const dodgerRightEdge = dodgerLeftEdge + 0;
 
     const rockLeftEdge = positionToInteger(rock.style.left)
 
-    // FIXME: The rock is 20 pixel's wide -- how do we get the right edge?
-    const rockRightEdge = 0;
+    // FIXED: The rock is 20 pixel's wide -- how do we get the right edge?
+    //const rockRightEdge = 0;
+    const rockRightEdge = rockLeftEdge + 20;
 
-    if (false /**
+    /**if (false /**
                * Think about it -- what's happening here?
                * There's been a collision if one of three things is true:
                * 1. The rock's left edge is < the DODGER's left edge,
@@ -45,8 +47,11 @@ function checkCollision(rock) {
                *    and the rock's right edge is < the DODGER's right edge;
                * 3. The rock's left edge is < the DODGER's right edge,
                *    and the rock's right edge is > the DODGER's right edge
-               */) {
-      return true
+               */ //) {
+    if ((rockLeftEdge <= dodgerLeftEdge && rockRightEdge >= dodgerLeftEdge)||
+    (rockLeftEdge >= dodgerLeftEdge && rockRightEdge <= dodgerRightEdge) || 
+    (rockLeftEdge <= dodgerRightEdge && rockRightEdge >= dodgerRightEdge) )    {
+        return true
     }
   }
 }
@@ -79,11 +84,19 @@ function createRock(x) {
      * If a rock collides with the DODGER,
      * we should call endGame()
      */
+     if (checkCollision(rock)) {endGame()}
 
     /**
      * Otherwise, if the rock hasn't reached the bottom of
      * the GAME, we want to move it again.
      */
+     function step() {
+    el.style.top = `${top += 2}px`
+ 
+    if (top < 360) {
+      window.requestAnimationFrame(step)
+    }
+  }
 
     /**
      * But if the rock *has* reached the bottom of the GAME,
