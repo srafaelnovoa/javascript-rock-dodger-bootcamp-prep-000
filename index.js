@@ -99,7 +99,7 @@ function createRock(x) {
       }
     
      }
-     this.step();
+     this.step
 
 
     /**
