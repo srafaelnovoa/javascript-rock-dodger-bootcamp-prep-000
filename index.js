@@ -99,7 +99,7 @@ function createRock(x) {
       }
     
      }
-     
+     window.requestAnimationFrame(step)
      step()
 
 
