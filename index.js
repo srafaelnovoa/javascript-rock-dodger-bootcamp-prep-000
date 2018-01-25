@@ -96,9 +96,10 @@ function createRock(x) {
  
     if (top < 360) {
       window.requestAnimationFrame(step)
-    }
-    step()
-  }
+      }
+    
+     }
+     step()
 
     /**
      * But if the rock *has* reached the bottom of the GAME,
