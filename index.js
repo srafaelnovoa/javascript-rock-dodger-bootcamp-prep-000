@@ -111,7 +111,7 @@ function createRock(x) {
   }
 
   // We should kick of the animation of the rock around here
-  const myInterval = setInterval(moveRock, 40)
+  const myInterval = setInterval(moveRock, 4)
   
   // Add the rock to ROCKS so that we can remove all rocks
   // when there's a collision
