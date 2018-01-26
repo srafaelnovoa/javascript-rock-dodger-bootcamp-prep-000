@@ -133,7 +133,7 @@ function endGame() {
     ROCKS[i].remove();
   }
    //DODGER.RemoveEventListener('keydown', moveDodger)
-   DODGER.
+   DODGER.removeEventListener('keydown', moveDodger)
    gameInterval = null;
     
   alert("YOU LOSE!")
