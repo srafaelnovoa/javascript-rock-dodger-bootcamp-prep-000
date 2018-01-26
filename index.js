@@ -125,7 +125,10 @@ function createRock(x) {
  */
 function endGame() {
   gameInterval = null
-  $(".rock").remove();
+  for (i = ROCKS.length - 1; i >=0; i--){
+    ROCKS[i].remove();
+  }
+  
   alert("YOU LOSE!")
 }
 
