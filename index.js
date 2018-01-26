@@ -105,7 +105,7 @@ function createRock(x) {
       * we should remove the rock from the DOM
       */
       
-      if (top<=0){
+      if (top>0){
         rock.remove();
       }
 
