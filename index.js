@@ -97,7 +97,7 @@ function createRock(x) {
          window.requestAnimationFrame(step)
          }
       }
-      window.requestAnimationFrame(step)
+      
          
       /**
       * But if the rock *has* reached the bottom of the GAME,
@@ -106,7 +106,7 @@ function createRock(x) {
       if (top>=30){
         rock.remove();
       }
-      
+      window.requestAnimationFrame(step)
       }
 
   // We should kick of the animation of the rock around here
