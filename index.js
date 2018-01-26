@@ -105,7 +105,7 @@ function createRock(x) {
       * we should remove the rock from the DOM
       */
       console.log(`top=${this.top}`)
-      if (rock.style.top>=360){
+      if (this.top>=360){
         rock.remove();
       }
 
