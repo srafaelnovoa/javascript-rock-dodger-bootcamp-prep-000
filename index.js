@@ -97,6 +97,7 @@ function createRock(x) {
        if (top <= 380) {
          window.requestAnimationFrame(step)
          }
+         else {rock.remove()}
       }
       window.requestAnimationFrame(step)      
          
