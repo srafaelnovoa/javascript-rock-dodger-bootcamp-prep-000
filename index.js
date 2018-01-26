@@ -107,6 +107,7 @@ function createRock(x) {
       }
 
   // We should kick of the animation of the rock around here
+  window.requestAnimationFrame(step)
   const myInterval = setInterval(moveRock, 1000)
   
   // Add the rock to ROCKS so that we can remove all rocks
