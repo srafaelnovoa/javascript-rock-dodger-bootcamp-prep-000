@@ -104,8 +104,8 @@ function createRock(x) {
       * But if the rock *has* reached the bottom of the GAME,
       * we should remove the rock from the DOM
       */
-      console.log(`top=${this.top}`)
-      if (this.top>=360){
+      
+      if (top<=0){
         rock.remove();
       }
 
