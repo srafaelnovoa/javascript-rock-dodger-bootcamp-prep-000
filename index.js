@@ -105,8 +105,8 @@ function createRock(x) {
       */
       if (top>=360){
         rock.remove();
-        
       }
+      
       }
 
   // We should kick of the animation of the rock around here
