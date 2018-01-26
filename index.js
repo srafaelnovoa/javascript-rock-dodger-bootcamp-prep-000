@@ -92,22 +92,19 @@ function createRock(x) {
      * the GAME, we want to move it again.
      */
      function step() {
-    rock.style.top = `${top += 2}px`
- 
-    if (top < 360) {
-      window.requestAnimationFrame(step)
-      }
-    
-     }
-     window.requestAnimationFrame(step)
-
-
-    /**
-     * But if the rock *has* reached the bottom of the GAME,
-     * we should remove the rock from the DOM
-     */
-     if (top>=360){rock.remove();}
-  }
+       rock.style.top = `${top += 2}px`
+       if (top < 360) {
+         window.requestAnimationFrame(step)
+         }
+         }
+         window.requestAnimationFrame(step)
+         
+         /**
+          * But if the rock *has* reached the bottom of the GAME,
+          * we should remove the rock from the DOM
+          */
+          if (top>=360){rock.remove();}
+        }
 
   // We should kick of the animation of the rock around here
   const myInterval = setInterval(moveRock, 1000)
